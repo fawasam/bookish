@@ -50,7 +50,7 @@ const Signup = () => {
 				<div className='right'>
 					<form className='form_container' onSubmit={handleSubmit}>
 			        {error && console.log(`${error}`)}
-						<h1>Create Account</h1>
+						<h2>Create Account</h2>
 						<input
 							type="text"
 							placeholder="Username"
@@ -97,7 +97,7 @@ const Signup = () => {
 					<h1>Welcome Back</h1>
 					<Link to="/login">
 						<button type="button" className='white_btn'>
-							Sing in
+							Sign in
 						</button>
 					</Link>
 				</div>
