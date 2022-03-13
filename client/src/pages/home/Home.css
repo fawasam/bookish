@@ -1,0 +1,23 @@
+.home-container {
+}
+.home-subcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-subcontainer h2 {
+  margin-top: 100px;
+  font-size: 4rem;
+  word-wrap: wrap;
+}
+
+@media screen and (max-width: 960px) {
+  .home-subcontainer h2 {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 760px) {
+  .home-subcontainer h2 {
+    font-size: 2rem;
+  }
+}
