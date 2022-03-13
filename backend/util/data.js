@@ -73,4 +73,58 @@ const books =[
     image:'',
     url:''
 },
+{
+    genre:'Philosophy',
+    title:'The Power of Your Subconscious Mind',
+    author:'Joseph Murphy',
+    language:'English',
+    description:'The Power of Your Subconscious Mind is one of the most promising self improvement books that you can gift to yourself or your loved ones. This book is designed to help you improve your relationships, health, and also to give you an internal strength that makes every hurdle look small.',
+    image:'',
+    url:'https://www.amazon.in/Power-Your-Subconscious-Mind/dp/8194790832/ref=sxin_16?asc_contentid=amzn1.osa.51ceff92-6080-4fa5-ae42-dc52a3c84a0b.A21TJRUUN4KGV.en_IN&asc_contenttype=article&ascsubtag=amzn1.osa.51ceff92-6080-4fa5-ae42-dc52a3c84a0b.A21TJRUUN4KGV.en_IN&creativeASIN=8194790832&crid=3E2Z8Q6DC4MKN&cv_ct_cx=books&cv_ct_id=amzn1.osa.51ceff92-6080-4fa5-ae42-dc52a3c84a0b.A21TJRUUN4KGV.en_IN&cv_ct_pg=search&cv_ct_we=asin&cv_ct_wn=osp-single-source-earns-comm&keywords=books&linkCode=oas&pd_rd_i=8194790832&pd_rd_r=4bb30e68-7b8a-4c2e-b48a-e7c98c307a1a&pd_rd_w=lH4lq&pd_rd_wg=28Svx&pf_rd_p=31dc3369-28cf-4a1f-9aa0-314b513a6d1f&pf_rd_r=9XB5RT0DAP36EZP26YM4&qid=1646594032&sprefix=%2Caps%2C465&sr=1-1-483c64d8-df78-4008-ae20-e69f683e58b1&tag=idivaosp-21'
+},
+{
+    genre:'Fiction',
+    title:'Midnight Freeway | Vivaan Shah | Book Review',
+    author:'Vivaan Shah',
+    language:'English',
+    description:'Yogesh Moolchandani, a notorious builder is killed on the spot when his Volkswagen Jetta, crashes head-on into a toll booth on the Bandra-Worli sea link. Some suspect it to be a suicide. But nothing in Yogesh life indicates so. As far as his present and future were concerned, everything looked promising and positively rosy.',
+    image:'',
+    url:'https://www.amazon.in/Midnight-Freeway-Vivaan-Shah/dp/0143453238/ref=sr_1_1?crid=2U6CE28G1JA07&keywords=Midnight+Freeway&qid=1646594678&sprefix=midnight+freeway%2Caps%2C300&sr=8-1'
+},
+{
+    genre:'Thriller',
+    title:'The Girlfriend',
+    author:'Michelle Frances',
+    language:'English',
+    description:'Laura is a lucky woman. Blessed with a rich and luxurious life. Laura has a lot to thank for. A flourishing career, a hardworking husband, and a caring son, Daniel who loves her to the moon and back. But all that changes when Daniel meets Cherry. Cherry is smart, vivacious, and gorgeous. She is also intelligent, hardworking, and a tad cunning.',
+    image:'',
+    url:'https://www.amazon.in/Girlfriend-Gripping-Psychological-Thriller-Bestseller/dp/150982152X/ref=sr_1_1?crid=2KFDOHVWGZJ22&keywords=the+girlfriend+michelle+frances&qid=1646594850&sprefix=the+girlfriend+michelle+frances%2Caps%2C287&sr=8-1'
+},
+{
+    genre:'Novel',
+    title:'The Kite Runner',
+    author:'Khaled Hosseini',
+    language:'English',
+    description:'The Kite Runner is a moving story of an unlikely friendship between a wealthy boy and the son of his fathers servant. Set in Afghanistan during a time of tragedy and destruction, this unforgettable novel will have you hooked from start to finish.',
+    image:'',
+    url:'https://www.amazon.com/Kite-Runner-Khaled-Hosseini/dp/159463193X'
+},
+{
+    genre:'Novel',
+    title:'Harry Potter and the Philosopher Stone',
+    author:'J.K. Rowling',
+    language:'English',
+    description:'This global bestseller took the world by storm. So, if you have not read Harry Potter, now may be the time. Join Harry Potter and his schoolmates as this must-read book transports you deep into a world of magic and monsters.',
+    image:'',
+    url:'https://www.amazon.in/Harry-Potter-Philosophers-Stone-Rowling/dp/1408855658'
+},
+{
+    genre:'Fiction',
+    title:'The Lion, the Witch, and the Wardrobe',
+    author:'C.S. Lewis',
+    language:'English',
+    description:'The Lion, The Witch, and the Wardrobe is undoubtedly one of the great books of all time. This renowned fantasy novel is set in Narnia, home to mythical beasts, talking animals, and warring kingdoms. The story follows a group of school children as they become entangled in this incredible world’s fate.',
+    image:'',
+    url:'https://www.amazon.in/Lion-Witch-Wardrobe-Chronicles-Narnia/dp/0007363664/ref=sr_1_1?crid=D2IKYYWG38U2&keywords=The+Lion%2C+the+Witch%2C+and+the+Wardrobe&qid=1647164691&s=books&sprefix=the+lion%2C+the+witch%2C+and+the+wardrobe%2Cstripbooks%2C322&sr=1-1'
+},
 ]
