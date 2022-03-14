@@ -138,3 +138,8 @@
     padding: 18px;
   }
 }
+@media screen and (max-width: 430px) {
+  .signup_form_container {
+    margin: 20px;
+  }
+}

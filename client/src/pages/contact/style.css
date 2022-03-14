@@ -141,6 +141,7 @@ iframe {
   border-radius: 2px;
   position: relative;
   margin-top: 55px;
+  border-radius: 10px;
   padding: 92px 70px 88px 70px;
 
   box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
