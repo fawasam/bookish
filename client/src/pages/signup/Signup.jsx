@@ -1,7 +1,8 @@
 import React, { useEffect, useState  } from 'react'
-import axios from "axios";
+// import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import {motion } from 'framer-motion'
+import Swal from 'sweetalert2'
 
 //redux
 import {useDispatch , useSelector} from "react-redux"
@@ -21,35 +22,49 @@ const Signup = () => {
     const userRegister = useSelector(state => state.userRegister)
     const { error , userInfo } =userRegister
 
-    useEffect(()=>{
-        if(userInfo){
-            navigate("/")
-        }
-    },[userInfo ])
-
+	
     const handleSubmit =(e)=>{
-        e.preventDefault()
+		e.preventDefault()
         if(password !== confirmPassword) {
-            setMessage('Password do not match')
+            Swal.fire('Password do not match',"", 'error')
+			setPassword('')
+			setConfirmPassword('')
         }
         else{
-            dispatch(register(name,email,password))
+			dispatch(register(name,email,password))
+			if(error){
+				setTimeout(() => {
+					Swal.fire(error,"", 'error')
+					// setEmail('')
+					setPassword('')
+					setConfirmPassword('')
+				}, 100);
+			}else{
+	
+				Swal.fire('Registration successfull',"", 'success')
+			}
         }
     }
+	useEffect(()=>{
+		if(userInfo){
+			navigate("/")
+		}
+	},[userInfo,dispatch ,handleSubmit])
 	
 	return (
 		<motion.div 
 		 layout
- 		 animate={{ opacity:1}}
+		 animate={{ opacity:1}}
  		 initial={{opacity:0}}
 		  exit={{opacity:0 }}
 		  transition={{duration:0.5}} 
-		
-		className="signup_container">
+		  
+		  className="signup_container">
+			{/* {error && <div className='error_msg'>{error}</div>} */}
 			<div className='signup_form_container'>	
 				<div className='right'>
 					<form className='form_container' onSubmit={handleSubmit}>
-			        {error && console.log(`${error}`)}
+			        {/* {error && console.log(`${error}`)} */}
 						<h2>Create Account</h2>
 						<input
 							type="text"
@@ -87,7 +102,6 @@ const Signup = () => {
 							required
 							className='input'
 						/>
-						{error && <div className='error_msg'>{error}</div>}
 						<button type="submit" className='green_btn'>
 							Sign Up
 						</button>

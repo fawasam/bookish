@@ -1,7 +1,7 @@
 import React, { useEffect, useState  } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import {motion } from 'framer-motion'
-
+import Swal from 'sweetalert2'
 //redux
 import {useDispatch , useSelector} from "react-redux"
 import {login,logout , getUserDetails} from "../../redux/actions/userAction.js"
@@ -19,10 +19,17 @@ const Login = () => {
             navigate("/")
         }
     },[ userInfo ])
-
+	
     const submitHandler =(e)=>{
         e.preventDefault()
         dispatch(login(email,password))
+		if(error){
+			setTimeout(() => {
+				Swal.fire(error,"", 'error')
+				setEmail('')
+				setPassword('')
+			}, 100);
+		}
     }
   return (
     <motion.div
@@ -38,6 +45,7 @@ const Login = () => {
 					<form className='form_container' 
                       onSubmit={submitHandler}>
 						<h1>Login</h1>						
+						  {/* {error && <div className='error_msg'>{error}</div>} */}
 						<input
 							type="email"
 							placeholder="Email"
@@ -56,7 +64,6 @@ const Login = () => {
 							required
 							className='input'
 						/>
-						{error && <div className='error_msg'>{error}</div>}
 						<button type="submit" className='green_btn'>
 							Login
 						</button>
