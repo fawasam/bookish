@@ -16,8 +16,8 @@ const Book = ({book , item}) => {
   >
     {item ? <h1>no boooks</h1> :<>
     <Link to={`/books/${book._id}`}>
-      <div className="card">
-      <img src={`${book.image}`} alt="" />
+      <div className="saved_card">
+      <img className='savedbook_img' src={`${book.image}`} alt="" />
       <div className="card-content">
       <h2>{ `${book.title}`.toUpperCase()}</h2>
       <h3>{`${book.author}`.toLowerCase()}</h3>

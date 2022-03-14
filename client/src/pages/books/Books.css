@@ -35,6 +35,9 @@ h2 {
   font-weight: bold;
   cursor: pointer;
 }
+.saved_card {
+  padding: 1rem !important;
+}
 button.active {
   background: rgb(65, 98, 168);
   color: white;
