@@ -47,6 +47,11 @@ const Header = () => {
           Books
         </Nav.Link>
         </LinkContainer>
+        <LinkContainer to="/contact" >
+        <Nav.Link > 
+          Contact
+        </Nav.Link>
+        </LinkContainer>
         {userInfo &&
         <LinkContainer to="/addbook" >
         <Nav.Link > 

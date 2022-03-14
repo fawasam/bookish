@@ -2,7 +2,7 @@ import {BrowserRouter ,Route,Routes } from 'react-router-dom'
 
 //imports 
 import Header from './components/Header';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Home from './pages/home/Home';
 import Books from './pages/books/Books';
 import Contact from './pages/contact/Contact';
@@ -17,6 +17,7 @@ import UserEdit from './pages/user/UserEdit';
 import BookList from "./pages/BookList"
 import Profile from './pages/Profile';
 import BookEdit from './pages/BookEdit';
+import Notfound from './components/Notfound';
 
 function App() {
   return (
@@ -38,12 +39,7 @@ function App() {
             <Route exact path="/admin/userList" element={<UserList/>} /> 
             <Route exact path="/admin/bookList" element={<BookList/>} /> 
             <Route exact path="/admin/user/:id/edit" element={<UserEdit/>} /> 
-            
-            
-            
-            
-           
-            
+            <Route  element={<Notfound/>} /> 
           </Routes>   
         </div>
         {/* <Footer/> */}
