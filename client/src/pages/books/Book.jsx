@@ -108,16 +108,17 @@ const Book = () => {
        },[userInfo ,dispatch ,id  ])
 
   return (
+    <>
+    <Link to ='/books' className='btn btn-light my-3'>Go Back</Link>
     <motion.div   
     animate={{ opacity:1}}
     initial={{opacity:0}}
     exit={{opacity:0 }}
     transition={{duration:0.5}}
     className='book-book'>
-    <Link to ='/books' className='btn btn-light my-3'>Go Back</Link>
     <div className="book-img">
     <img
-     src={book.image} alt="" /> <br />
+     src={book.image} className='single_img' height='500' width='500' alt="" /> <br />
      </div>
     <div className="title-book">
     <h1>{book.title}</h1>
@@ -131,19 +132,19 @@ const Book = () => {
     </div>
         <div className='button-book'>     
         {userInfo && user.includes(book._id) ? <>
-       <span
+       <Button
           type="submit" 
           className="btn btn-save" 
           onClick={removeFromSave}
           >Remove from <b>MY BOOKS</b>
-          </span>      
+          </Button>      
         </> :  <>
-          <span
+          <Button
           type="submit" 
           className="btn btn-save" 
           onClick={addTosave}
           >Save to <b>MY BOOKS</b>
-          </span>
+          </Button>
         </>}
     <a href={book.url} target="_blank" rel="noopener noreferrer" className="btn btn-buy">Buy Now <i className="fas fa-shopping-cart"></i></a>
     </div>
@@ -153,7 +154,7 @@ const Book = () => {
                 {book.reviews.length === 0 && <Message variant="dark">No reviews</Message>}
                 <ListGroup variant='flush'>
                     {book.reviews.map(review =>(
-                        <ListGroupItem key={review._id}>
+                      <ListGroupItem key={review._id}>
                             <strong>{review.name}</strong>
                             
                             <Rating value={review.rating} />
@@ -201,6 +202,7 @@ const Book = () => {
         </Row>
     </motion.div>
     
+                                </>
   )
 }
 
