@@ -18,7 +18,7 @@ const Header = () => {
        if(userInfo){
            navigate("/")
        }
-   },[ userInfo ])
+   },[ userInfo  ])
 
     const logoutHandler =()=>{
       dispatch(logout())

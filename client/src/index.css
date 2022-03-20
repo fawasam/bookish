@@ -142,6 +142,9 @@ body {
   margin-top: 0px;
   margin-bottom: 25px;
 }
+.no_save {
+  margin-left: 3rem;
+}
 
 @media only screen and (max-width: 767px) {
   .notfound .notfound-404 {

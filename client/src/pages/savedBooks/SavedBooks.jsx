@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import {useDispatch , useSelector} from "react-redux"
 import { useEffect } from 'react'
 import axios from 'axios'
+import { Link, useNavigate } from "react-router-dom";
+
 import {motion} from 'framer-motion'
 import Book from '../books/Card'
 import  '../books/Books.css'
+import Loader from '../../components/Loader'
 // import {listSavedBooks} from '../../redux/actions/bookAction'
 const SavedBooks = () => {
 
@@ -14,8 +17,6 @@ const SavedBooks = () => {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } =userLogin
     const listSavedBook =useSelector(state =>state.listSavedBook)
-    // const bookSave =useSelector(state =>state.bookSave)
-    // const { loading, success, book} =bookSave
     const { loading} =listSavedBook
 
     
@@ -25,22 +26,25 @@ const SavedBooks = () => {
         setBooks(savedBooks)
       })
     }
+    console.log(book);
     useEffect(()=>{
-      //  dispatch(listSavedBooks(userInfo._id))
       fetchSavedBooks()
-      // setBooks(book)
-
     },[dispatch , fetchSavedBooks ])
   return (
-   
+   <>
+    <Link to ='/books' className='btn btn-light my-3'>Go Back</Link>
     <motion.div
     layout 
     className="popular-books">
-      <>
+      
+      {loading && <Loader />}
+      {book.length===0 && 
+      <div className="no_save">
 
-      {loading ? <> 
-      <h1>Loading</h1>
-      </>:
+      <h3>No Saved Books</h3>
+      </div>
+      }
+      { 
       <>
        {book.map(book=>{
          return(
@@ -48,9 +52,10 @@ const SavedBooks = () => {
            )})}
         </>
       }
-      </>
+      
       
     </motion.div>
+      </>
   )
 }
 

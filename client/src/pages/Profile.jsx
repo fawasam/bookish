@@ -6,7 +6,7 @@ import {getUserDetails ,UpdateuserDetails,listMyBook } from "../redux/actions/us
 import Loader from '../components/Loader'
 import Message from '../components/Message.jsx'
 import {useNavigate} from "react-router-dom"
-
+import Swal from 'sweetalert2'
 const Profile = () => {
 
     const [name ,setName] =useState('')
@@ -49,7 +49,9 @@ const Profile = () => {
     const submitHandler =(e)=>{
         e.preventDefault()
         if(password !== confirmPassword) {
-            setMessage('Password do not match')
+            Swal.fire('password do not match', '', 'error')
+            setPassword('')
+            setConfirmPassword('')
         }
         else{
             //dipatch udpader profile 
@@ -60,9 +62,8 @@ const Profile = () => {
         <Row className='mt-5'>
             <Col md={4}>
   <h2>User Profile</h2>
-            {message && <Message variant='danger'>{message}</Message>}
-            {error && <Message variant='danger'>{error}</Message>}
-            {success && <Message variant='success'>Profile updated</Message>}
+            {error && Swal.fire(error, '', 'error')}
+
             {loading && <Loader />}
            <Form onSubmit={submitHandler}>
 
