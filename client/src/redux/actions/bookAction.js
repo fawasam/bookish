@@ -1,5 +1,4 @@
 import axios from "axios"
-import Swal from 'sweetalert2'
 import{
     BOOK_LIST_FAIL,
     BOOK_LIST_REQUEST,
@@ -30,7 +29,7 @@ import{
     BOOK_SAVE_DELETE_SUCCESS
 
 } from "../constants/constants.js"
-
+import Swal from 'sweetalert2'
 //CREATE BOOK
 
 export const createBooks=(genre,title,author,description,language,image,url)=>async(dispatch,getState) =>{
@@ -243,13 +242,15 @@ export const createBookReview = (bookId,review) => async (dispatch,getState )=>{
             }
         }
         const {data} = await axios.post(`/api/books/${bookId}/review`,review, config)
+        Swal.fire('Review Added', '', 'success')
         
         dispatch({
             type:BOOK_CREATE_REVIEW_SUCCESS,
             payload:data
         })
-
+        
     } catch (error) {
+        Swal.fire('Review Alredy Added', '', 'error')
             dispatch({ 
             type:BOOK_CREATE_REVIEW_FAIL, 
             payload :error.message

@@ -28,6 +28,7 @@ const Book = () => {
     const [user,setUser] = useState([])
 
 
+
     
     
     
@@ -39,6 +40,7 @@ const Book = () => {
     // const userId =user.savedBooks
     // console.log(userId);
 
+
     
     const userLogin = useSelector(state => state.userLogin)
     
@@ -46,16 +48,6 @@ const Book = () => {
     const bookReview =useSelector(state =>state.bookReview)
     const {error:errorReview } =bookReview
     
-    
-    
-    
-    
-    // const fetchPopular = ()=>{
-      //   axios.get(`/api/books/${id}`).then((response)=>{ 
-        //     const movies =response.data
-    //     setSignle(movies)
-    //   })
-    // }
     const fetchUserById = () =>{
       axios.get(`/api/users/${userInfo._id}`).then((response)=>{
         const userId=response.data
@@ -87,12 +79,8 @@ const Book = () => {
         rating,comment
         }))
         if(errorReview){
-          
-          Swal.fire('Review Alredy Added', '', 'error')
-        }
-        else{
-          Swal.fire('Review Added', '', 'success')
-
+          setComment('')
+          setRating('')
         }
         
       }
@@ -101,15 +89,15 @@ const Book = () => {
          dispatch(listBooksDetails(id))
          if(userInfo)
          {
-
            dispatch(getUserDetails(userInfo._id))
            fetchUserById()
           }
-       },[userInfo ,dispatch ,id  ])
+       },[userInfo,dispatch ,id ,book])
 
   return (
     <>
     <Link to ='/books' className='btn btn-light my-3'>Go Back</Link>
+    {book &&
     <motion.div   
     animate={{ opacity:1}}
     initial={{opacity:0}}
@@ -164,9 +152,9 @@ const Book = () => {
                     ))}
                     <ListGroupItem className="mt-5">
                         <h2>Write a review</h2>
-                        {errorReview && <Message variant='danger'>Review already saved</Message>}
+                        {/* {errorReview && <Message variant='danger'>Review already saved</Message>} */}
                         {userInfo ? (
-                        <Form onSubmit={submitHandler}>
+                          <Form onSubmit={submitHandler}>
                             <FormGroup className="mt-2" controlId='rating'>
                                 <FormLabel>Rating</FormLabel>
                                 <FormControl 
@@ -201,6 +189,7 @@ const Book = () => {
             </Col>
         </Row>
     </motion.div>
+          }
     
                                 </>
   )

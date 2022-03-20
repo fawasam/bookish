@@ -158,6 +158,8 @@ const createBookReview = asyncHandler(async(req,res) => {
     if(book){
         const alreadyReviewed = book.reviews.find(r=>r.user.toString() === req.user._id.toString())
         if(alreadyReviewed){
+
+            
             res.status(400).json({errors:[{msg:'your review already saved'}]})
         }else{
 
@@ -168,7 +170,6 @@ const createBookReview = asyncHandler(async(req,res) => {
                 comment
              }
     
-             console.log(review);
             book.reviews.push(review)
             book.numReviews =  book.reviews.length
             book.rating = book.reviews.reduce((acc,item)=>item.rating + acc , 0) / book.reviews.length
