@@ -14,6 +14,7 @@ import {getUserDetails} from "../../redux/actions/userAction.js"
 import Message from '../../components/Message';
 import Rating from '../../components/Rating';
 import axios from 'axios';
+import Loader from '../../components/Loader';
 
 const Book = () => {
 
@@ -21,29 +22,21 @@ const Book = () => {
 	  const dispatch =useDispatch()
     const {id} =useParams()
 
-
-    // const [qty ,setQty] =useState(1)
     const [rating,setRating] =useState(0)
     const [comment,setComment] =useState('')
     const [user,setUser] = useState([])
 
-
-
-    
-    
     
     const bookDetails =useSelector(state =>state.bookDetails)
-    const { book} =bookDetails
+    const { book , loading} =bookDetails
     // const userDetails =useSelector(state =>state.userDetails)
     // const { user } =userLogin
     
     // const userId =user.savedBooks
     // console.log(userId);
 
-
     
     const userLogin = useSelector(state => state.userLogin)
-    
     const { userInfo } =userLogin
     const bookReview =useSelector(state =>state.bookReview)
     const {error:errorReview } =bookReview
@@ -96,7 +89,9 @@ const Book = () => {
 
   return (
     <>
+    
     <Link to ='/books' className='btn btn-light my-3'>Go Back</Link>
+     {loading && <Loader />}
     {book &&
     <motion.div   
     animate={{ opacity:1}}

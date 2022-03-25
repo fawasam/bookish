@@ -15,10 +15,7 @@ const Books = () => {
   const [activeGenre ,setActiveGenre] =useState(0)
   const [item ,setItem] =useState(false)
 
-  useEffect(()=>{
-    fetchPopular()
-  },[]) 
-
+  //here needs redux
   const fetchPopular = ()=>{
     axios.get('/api/books').then((response)=>{
       const books =response.data
@@ -26,6 +23,9 @@ const Books = () => {
       setFiltered(books)
     })
   }
+  useEffect(()=>{
+    fetchPopular()
+  },[]) 
 
   
   
